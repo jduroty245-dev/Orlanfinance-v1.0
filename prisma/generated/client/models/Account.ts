@@ -31,6 +31,8 @@ export type AccountMinAggregateOutputType = {
   name: string | null
   type: $Enums.AccountType | null
   currency: string | null
+  icon: string | null
+  color: string | null
   description: string | null
   isArchived: boolean | null
   createdAt: Date | null
@@ -43,6 +45,8 @@ export type AccountMaxAggregateOutputType = {
   name: string | null
   type: $Enums.AccountType | null
   currency: string | null
+  icon: string | null
+  color: string | null
   description: string | null
   isArchived: boolean | null
   createdAt: Date | null
@@ -55,6 +59,8 @@ export type AccountCountAggregateOutputType = {
   name: number
   type: number
   currency: number
+  icon: number
+  color: number
   description: number
   isArchived: number
   createdAt: number
@@ -69,6 +75,8 @@ export type AccountMinAggregateInputType = {
   name?: true
   type?: true
   currency?: true
+  icon?: true
+  color?: true
   description?: true
   isArchived?: true
   createdAt?: true
@@ -81,6 +89,8 @@ export type AccountMaxAggregateInputType = {
   name?: true
   type?: true
   currency?: true
+  icon?: true
+  color?: true
   description?: true
   isArchived?: true
   createdAt?: true
@@ -93,6 +103,8 @@ export type AccountCountAggregateInputType = {
   name?: true
   type?: true
   currency?: true
+  icon?: true
+  color?: true
   description?: true
   isArchived?: true
   createdAt?: true
@@ -178,6 +190,8 @@ export type AccountGroupByOutputType = {
   name: string
   type: $Enums.AccountType
   currency: string
+  icon: string | null
+  color: string | null
   description: string | null
   isArchived: boolean
   createdAt: Date
@@ -211,6 +225,8 @@ export type AccountWhereInput = {
   name?: Prisma.StringFilter<"Account"> | string
   type?: Prisma.EnumAccountTypeFilter<"Account"> | $Enums.AccountType
   currency?: Prisma.StringFilter<"Account"> | string
+  icon?: Prisma.StringNullableFilter<"Account"> | string | null
+  color?: Prisma.StringNullableFilter<"Account"> | string | null
   description?: Prisma.StringNullableFilter<"Account"> | string | null
   isArchived?: Prisma.BoolFilter<"Account"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Account"> | Date | string
@@ -226,6 +242,8 @@ export type AccountOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
   currency?: Prisma.SortOrder
+  icon?: Prisma.SortOrderInput | Prisma.SortOrder
+  color?: Prisma.SortOrderInput | Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   isArchived?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -244,6 +262,8 @@ export type AccountWhereUniqueInput = Prisma.AtLeast<{
   name?: Prisma.StringFilter<"Account"> | string
   type?: Prisma.EnumAccountTypeFilter<"Account"> | $Enums.AccountType
   currency?: Prisma.StringFilter<"Account"> | string
+  icon?: Prisma.StringNullableFilter<"Account"> | string | null
+  color?: Prisma.StringNullableFilter<"Account"> | string | null
   description?: Prisma.StringNullableFilter<"Account"> | string | null
   isArchived?: Prisma.BoolFilter<"Account"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Account"> | Date | string
@@ -259,6 +279,8 @@ export type AccountOrderByWithAggregationInput = {
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
   currency?: Prisma.SortOrder
+  icon?: Prisma.SortOrderInput | Prisma.SortOrder
+  color?: Prisma.SortOrderInput | Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   isArchived?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -277,6 +299,8 @@ export type AccountScalarWhereWithAggregatesInput = {
   name?: Prisma.StringWithAggregatesFilter<"Account"> | string
   type?: Prisma.EnumAccountTypeWithAggregatesFilter<"Account"> | $Enums.AccountType
   currency?: Prisma.StringWithAggregatesFilter<"Account"> | string
+  icon?: Prisma.StringNullableWithAggregatesFilter<"Account"> | string | null
+  color?: Prisma.StringNullableWithAggregatesFilter<"Account"> | string | null
   description?: Prisma.StringNullableWithAggregatesFilter<"Account"> | string | null
   isArchived?: Prisma.BoolWithAggregatesFilter<"Account"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Account"> | Date | string
@@ -288,6 +312,8 @@ export type AccountCreateInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -303,6 +329,8 @@ export type AccountUncheckedCreateInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -316,6 +344,8 @@ export type AccountUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -331,6 +361,8 @@ export type AccountUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -345,6 +377,8 @@ export type AccountCreateManyInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -356,6 +390,8 @@ export type AccountUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -368,6 +404,8 @@ export type AccountUncheckedUpdateManyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -390,6 +428,8 @@ export type AccountCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
   currency?: Prisma.SortOrder
+  icon?: Prisma.SortOrder
+  color?: Prisma.SortOrder
   description?: Prisma.SortOrder
   isArchived?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -402,6 +442,8 @@ export type AccountMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
   currency?: Prisma.SortOrder
+  icon?: Prisma.SortOrder
+  color?: Prisma.SortOrder
   description?: Prisma.SortOrder
   isArchived?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -414,6 +456,8 @@ export type AccountMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
   currency?: Prisma.SortOrder
+  icon?: Prisma.SortOrder
+  color?: Prisma.SortOrder
   description?: Prisma.SortOrder
   isArchived?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -515,6 +559,8 @@ export type AccountCreateWithoutUserInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -528,6 +574,8 @@ export type AccountUncheckedCreateWithoutUserInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -571,6 +619,8 @@ export type AccountScalarWhereInput = {
   name?: Prisma.StringFilter<"Account"> | string
   type?: Prisma.EnumAccountTypeFilter<"Account"> | $Enums.AccountType
   currency?: Prisma.StringFilter<"Account"> | string
+  icon?: Prisma.StringNullableFilter<"Account"> | string | null
+  color?: Prisma.StringNullableFilter<"Account"> | string | null
   description?: Prisma.StringNullableFilter<"Account"> | string | null
   isArchived?: Prisma.BoolFilter<"Account"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Account"> | Date | string
@@ -582,6 +632,8 @@ export type AccountCreateWithoutTransactionsInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -596,6 +648,8 @@ export type AccountUncheckedCreateWithoutTransactionsInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -613,6 +667,8 @@ export type AccountCreateWithoutIncomingTransfersInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -627,6 +683,8 @@ export type AccountUncheckedCreateWithoutIncomingTransfersInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -655,6 +713,8 @@ export type AccountUpdateWithoutTransactionsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -669,6 +729,8 @@ export type AccountUncheckedUpdateWithoutTransactionsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -692,6 +754,8 @@ export type AccountUpdateWithoutIncomingTransfersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -706,6 +770,8 @@ export type AccountUncheckedUpdateWithoutIncomingTransfersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -718,6 +784,8 @@ export type AccountCreateManyUserInput = {
   name: string
   type: $Enums.AccountType
   currency?: string
+  icon?: string | null
+  color?: string | null
   description?: string | null
   isArchived?: boolean
   createdAt?: Date | string
@@ -729,6 +797,8 @@ export type AccountUpdateWithoutUserInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -742,6 +812,8 @@ export type AccountUncheckedUpdateWithoutUserInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -755,6 +827,8 @@ export type AccountUncheckedUpdateManyWithoutUserInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
   currency?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  color?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isArchived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -807,6 +881,8 @@ export type AccountSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name?: boolean
   type?: boolean
   currency?: boolean
+  icon?: boolean
+  color?: boolean
   description?: boolean
   isArchived?: boolean
   createdAt?: boolean
@@ -823,6 +899,8 @@ export type AccountSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   type?: boolean
   currency?: boolean
+  icon?: boolean
+  color?: boolean
   description?: boolean
   isArchived?: boolean
   createdAt?: boolean
@@ -836,6 +914,8 @@ export type AccountSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   type?: boolean
   currency?: boolean
+  icon?: boolean
+  color?: boolean
   description?: boolean
   isArchived?: boolean
   createdAt?: boolean
@@ -849,13 +929,15 @@ export type AccountSelectScalar = {
   name?: boolean
   type?: boolean
   currency?: boolean
+  icon?: boolean
+  color?: boolean
   description?: boolean
   isArchived?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type AccountOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "type" | "currency" | "description" | "isArchived" | "createdAt" | "updatedAt", ExtArgs["result"]["account"]>
+export type AccountOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "type" | "currency" | "icon" | "color" | "description" | "isArchived" | "createdAt" | "updatedAt", ExtArgs["result"]["account"]>
 export type AccountInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   transactions?: boolean | Prisma.Account$transactionsArgs<ExtArgs>
@@ -882,6 +964,8 @@ export type $AccountPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     name: string
     type: $Enums.AccountType
     currency: string
+    icon: string | null
+    color: string | null
     description: string | null
     isArchived: boolean
     createdAt: Date
@@ -1317,6 +1401,8 @@ export interface AccountFieldRefs {
   readonly name: Prisma.FieldRef<"Account", 'String'>
   readonly type: Prisma.FieldRef<"Account", 'AccountType'>
   readonly currency: Prisma.FieldRef<"Account", 'String'>
+  readonly icon: Prisma.FieldRef<"Account", 'String'>
+  readonly color: Prisma.FieldRef<"Account", 'String'>
   readonly description: Prisma.FieldRef<"Account", 'String'>
   readonly isArchived: Prisma.FieldRef<"Account", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Account", 'DateTime'>

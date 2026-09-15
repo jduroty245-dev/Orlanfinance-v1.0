@@ -76,6 +76,8 @@ model Account {
   name         String
   type         AccountType
   currency     String      @default("NGN")
+  icon         String?     // emoji or icon key
+  color        String?     // hex color
   description  String?
   isArchived   Boolean     @default(false)
   createdAt    DateTime    @default(now())

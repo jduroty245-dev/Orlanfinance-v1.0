@@ -1224,6 +1224,8 @@ export const AccountScalarFieldEnum = {
   name: 'name',
   type: 'type',
   currency: 'currency',
+  icon: 'icon',
+  color: 'color',
   description: 'description',
   isArchived: 'isArchived',
   createdAt: 'createdAt',
