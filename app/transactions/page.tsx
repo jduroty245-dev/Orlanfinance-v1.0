@@ -12,7 +12,7 @@ export default async function TransactionsPage() {
   if (!user) redirect('/login')
 
   const accounts = await getAccountsWithBalances(user.id)
-  const { grouped: groupedTransactions } = await getTransactions(user.id)
+  const { grouped: groupedTransactions } = await getTransactions(user.id, { limit: 10 })
 
   const totalBalance = accounts.reduce((sum, acc) => sum + acc.balance, 0)
 
@@ -20,7 +20,18 @@ export default async function TransactionsPage() {
     <div className="flex min-h-screen flex-col bg-gray-50 pb-24">
       {/* Header & Total Balance */}
       <div className="bg-blue-600 px-4 py-8 text-white shadow-md">
-        <h1 className="text-sm font-medium text-blue-100 uppercase tracking-wider">Total Balance</h1>
+        <div className="flex items-center justify-between mb-1">
+          <h1 className="text-sm font-medium text-blue-100 uppercase tracking-wider">Total Balance</h1>
+          <Link
+            href="/history"
+            className="flex items-center gap-1 rounded-xl bg-white/15 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/25 transition-colors"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h8" />
+            </svg>
+            History
+          </Link>
+        </div>
         <p className="mt-1 text-4xl font-bold tracking-tight">{formatNaira(totalBalance)}</p>
         
         {/* Account horizontal scroll */}
@@ -44,7 +55,12 @@ export default async function TransactionsPage() {
       <div className="flex-1 px-4 py-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-gray-900">Recent Activity</h2>
-          {/* We could add filter chips here */}
+          <Link
+            href="/history"
+            className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+          >
+            See All →
+          </Link>
         </div>
 
         {Object.keys(groupedTransactions).length === 0 ? (
