@@ -19,7 +19,7 @@ export default async function NewTransactionPage() {
 
   const dbUser = await getUserBySupabaseId(user.id)
   
-  let categories = []
+  let categories: any[] = []
   if (dbUser) {
     categories = await prisma.category.findMany({
       where: { userId: dbUser.id },
